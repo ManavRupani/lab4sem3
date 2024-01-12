@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <p id="Messeage">
+
+    </p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br>
+    <table border="1" id="tbl">
+    <tr>
+        <td>Row1 Col1</td>
+        <td>Row1 Col2</td>
+    </tr>
+    </table>
+    <br>
+    <button onclick="fun_insert()">Insert row</button>
+    <button onclick="fun_remove()">Delete row</button>
+    <script>
+        let tr_count = document.getElementsByTagName("tr");
+        let trnum=tr_count.length;
+        function fun_insert(){
+            tabel=document.getElementById("tbl")
+            row=document.createElement("tr")
+            trnum++;
+            col1=document.createElement("td")
+            col2=document.createElement("td")
+            text1=document.createTextNode("Row"+(tr_count.length+1)+" Col1")
+            text2=document.createTextNode("Row"+(tr_count.length+1) +" Col1")
+            col1.appendChild(text1)
+            col2.appendChild(text2)
+            row.appendChild(col1)
+            row.appendChild(col2)
+            tabel.appendChild(row)
+        }
+
+        function fun_remove(){
+            if(tr_count.length>0){
+                let first_row = tr_count[0]
+                first_row.remove()
+                trnum--
+            }
+            if(tr_count.length==0){
+                let pmsg = document.getElementById("Messeage")
+                pmsg.innerHTML="Message: No more rows to delete";
+            }
+
+
+            // let tabel = document.getElementById("tbl")
+            // let row = document.getElementsByTagName("tr")[0];
+            // row.remove();
+            // if(trnum==0){
+            // let pmsg = getElementById("Messeage")
+            //     pmsg.innerHTML="Message: No more rows to delete"
+            // }else{
+            // trnum--}    
+        } 
+    </script>
+</body>
+</html>

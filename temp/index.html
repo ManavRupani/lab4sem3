@@ -1,0 +1,44 @@
+<html>
+   <p id="test">
+      Messeage:
+   </p>
+  <head>
+    <title>My home page</title>
+  </head>
+  <input type="button" onclick="removeFirst()" value="Press">
+  <body>
+   <ul>
+      <li>Coffe</li>
+      <li>Tea</li>
+      <li>Milk</li>
+   </ul>
+   <br>
+   <button onclick="function1()">Remove first</button>
+   <button onclick="function2()">Remove last</button>
+  </body>
+    
+     <script>
+      let ul = document.getElementsByTagName("ul")[0];
+      let ui = ul.getElementsByTagName("li");
+
+      function removeFirst(){
+         if(ui.length<=0){
+           let text = document.getElementById("test");
+           text.innerHTML="Messeage: No more items to remove"
+
+         }else{
+        ul.removeChild(ul.firstElementChild);
+            }
+        
+      }
+      function function1(){
+
+         ul.removeChild(ul.firstElementChild)
+         
+      }
+      function function2(){
+         ul.removeChild(ul.lastElementChild)  
+      }
+     </script>
+  </body>
+</html>
